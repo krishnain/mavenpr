@@ -11,7 +11,7 @@ node('built-in')
     }
     stage('ContDeployment_Master')
     {
-        cicd.newDeploy("${env.JOB_NAME}","172.31.24.16","testapp")
+        cicd.newDeploy("${env.JOB_NAME}/${env.BRANCH_NAME}","172.31.24.16","testapp")
     }
     stage('ContTesting_Master')
     {
