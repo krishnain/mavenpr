@@ -11,16 +11,16 @@ node('built-in')
     }
     stage('ContDeployment_Master')
     {
-        cicd.newDeploy("${env.JOB_NAME}/${env.BRANCH_NAME}","172.31.24.16","testapp")
+        cicd.newDeploy("${env.WORKSPACE}","172.31.24.16","testapp")
     }
     stage('ContTesting_Master')
     {
         cicd.newGit("https://github.com/intelliqittrainings/FunctionalTesting.git")
-        cicd.runSelenium("${env.JOB_NAME}")
+        cicd.runSelenium("${env.WORKSPACE")
     }
     stage('ContDelivery_Master')
     {
-        cicd.newDeploy("${env.JOB_NAME}","172.31.21.0","prodapp")
+        cicd.newDeploy("${env.WORKSPACE}","172.31.21.0","prodapp")
     }
     
 }
