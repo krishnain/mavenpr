@@ -16,7 +16,7 @@ node('built-in')
     stage('ContTesting_Master')
     {
         cicd.newGit("https://github.com/intelliqittrainings/FunctionalTesting.git")
-        cicd.runSelenium("${env.WORKSPACE")
+        cicd.runSelenium("${env.WORKSPACE}")
     }
     stage('ContDelivery_Master')
     {
